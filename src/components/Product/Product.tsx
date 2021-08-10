@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container } from "./ProductStyles";
+import { Container } from "./productStyles";
 
 const Product: React.FC = () => {
   return (

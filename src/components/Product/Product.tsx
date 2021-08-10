@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Container } from "./styles";
+import { Container } from "./ProductStyles";
 
 const Product: React.FC = () => {
   return (
     <Container>
-      Oi fion
+      Componente Produto
     </Container>
   )
 }

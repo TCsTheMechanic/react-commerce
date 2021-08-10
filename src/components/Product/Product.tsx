@@ -1,12 +1,10 @@
 import React from "react";
 
-import { Container } from "./productStyles";
-
 const Product: React.FC = () => {
   return (
-    <Container>
-      Componente Produto
-    </Container>
+      <div>
+        Componente Produto
+      </div>
   )
 }
 

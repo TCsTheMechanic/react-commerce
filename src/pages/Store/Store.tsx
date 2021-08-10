@@ -1,13 +1,14 @@
 import React from "react";
 
-import Product from "../../components/Product/Product";
+import Header from "../../components/Header/Header";
+
+import { Container } from "./storeStyles";
 
 const Store: React.FC = () => {
   return (
-    <div>
-      Pagina Store
-      <Product/>
-    </div>
+    <Container>
+      <Header/>
+    </Container>
   )
 }
 

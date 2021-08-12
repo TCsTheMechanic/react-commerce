@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import Switch from 'react-switch';
 import { ThemeContext } from 'styled-components';
+import { useHistory } from 'react-router';
 
 import { TiShoppingCart } from 'react-icons/ti'
 
-import { HeaderContent, RightMenu } from './headerStyles';
+import { HeaderContent, RightMenu, CartButton } from './headerStyles';
 
 interface Props {
   toggleTheme(): void
@@ -12,6 +13,12 @@ interface Props {
 
 const Header: React.FC<Props> = ({ toggleTheme }) => {
   const { colors, title } = useContext(ThemeContext)
+
+  const history = useHistory();
+
+  function navigateToCart() {
+    history.push('/cart')
+  }
 
   return (
     <HeaderContent>
@@ -25,16 +32,20 @@ const Header: React.FC<Props> = ({ toggleTheme }) => {
 
       <RightMenu>
         <Switch
-          onChange={ toggleTheme }
-          checked={ title === 'lightTheme' }
-          checkedIcon={ false }
-          uncheckedIcon={ false }
-          height={ 24 }
-          width={ 60 }
-          offColor={ colors.background }
-          onColor={ colors.secondary }
+          onChange={toggleTheme}
+          checked={title === 'lightTheme'}
+          checkedIcon={false}
+          uncheckedIcon={false}
+          height={24}
+          width={60}
+          offColor={colors.background}
+          onColor={colors.secondary}
         />
-        <TiShoppingCart/>
+
+        <CartButton onClick={navigateToCart}>
+          <TiShoppingCart />
+        </CartButton>
+
       </RightMenu>
     </HeaderContent>
   )

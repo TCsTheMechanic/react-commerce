@@ -17,3 +17,8 @@ export const RightMenu = styled.div`
   font-size: 1.5rem;
   width: 8%;
 `
+export const CartButton = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+`

@@ -7,6 +7,7 @@ import darkTheme from "./styles/themes/darkTheme";
 import GlobalStyle from './styles/globalStyles'
 
 import Store from "./pages/Store/Store";
+import Cart from "./pages/Cart/Cart";
 
 const Routes: React.FC = () => {
   const [theme, setTheme] = useState(darkTheme)
@@ -21,7 +22,11 @@ const Routes: React.FC = () => {
         <GlobalStyle />
         <Route
           exact path='/'
-          render={() => <Store toggleTheme={ toggleTheme }/>}
+          render={ () => <Store toggleTheme={ toggleTheme }/> }
+        />
+        <Route
+          exact path='/cart'
+          render={ () => <Cart toggleTheme={ toggleTheme }/> }
         />
       </ThemeProvider>
     </BrowserRouter>

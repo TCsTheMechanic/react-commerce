@@ -2,7 +2,7 @@ import React from "react";
 
 import Header from "../../components/Header/Header";
 
-import { Container } from "./storeStyles";
+import { StorePage } from "./storeStyles";
 
 interface Props {
   toggleTheme(): void
@@ -10,9 +10,10 @@ interface Props {
 
 const Store: React.FC<Props> = ({ toggleTheme }) => {
   return (
-    <Container>
+    <StorePage>
       <Header toggleTheme={ toggleTheme }/>
-    </Container>
+      Store Page
+    </StorePage>
   )
 }
 

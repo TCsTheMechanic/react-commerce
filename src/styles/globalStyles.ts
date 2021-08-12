@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   #root {
@@ -20,6 +20,11 @@ export default createGlobalStyle`
 
   body, input, button, textarea {
     font: 400 1rem sans-serif;
+  }
+
+  body {
+    background: ${ props => props.theme.colors.background };
+    color: ${ props => props.theme.colors.text }
   }
 
   ul, li {

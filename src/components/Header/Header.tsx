@@ -4,6 +4,7 @@ import { ThemeContext } from 'styled-components';
 import { useHistory } from 'react-router';
 
 import { TiShoppingCart } from 'react-icons/ti'
+import { FaUserCircle } from 'react-icons/fa'
 
 import { HeaderContent, RightMenu, CartButton } from './headerStyles';
 
@@ -45,6 +46,8 @@ const Header: React.FC<Props> = ({ toggleTheme }) => {
         <CartButton onClick={navigateToCart}>
           <TiShoppingCart />
         </CartButton>
+
+        <FaUserCircle/>
 
       </RightMenu>
     </HeaderContent>

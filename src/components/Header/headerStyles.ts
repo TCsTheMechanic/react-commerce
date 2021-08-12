@@ -15,7 +15,7 @@ export const RightMenu = styled.div`
   justify-content: space-between;
   align-items: center;
   font-size: 1.5rem;
-  width: 8%;
+  width: 10rem;
 `
 export const CartButton = styled.div`
   display: flex;

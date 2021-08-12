@@ -2,13 +2,16 @@ import React, { useContext } from 'react';
 import Switch from 'react-switch';
 import { ThemeContext } from 'styled-components';
 
-import { FiSun, FiMoon } from 'react-icons/fi'
 import { TiShoppingCart } from 'react-icons/ti'
 
 import { HeaderContent, RightMenu } from './headerStyles';
 
-const Header: React.FC = () => {
-  const { colors } = useContext(ThemeContext)
+interface Props {
+  toggleTheme(): void
+}
+
+const Header: React.FC<Props> = ({ toggleTheme }) => {
+  const { colors, title } = useContext(ThemeContext)
 
   return (
     <HeaderContent>
@@ -22,10 +25,10 @@ const Header: React.FC = () => {
 
       <RightMenu>
         <Switch
-          onChange={ () => {} }
-          checked={ true }
-          checkedIcon={ <FiSun/> }
-          uncheckedIcon={ <FiMoon/> }
+          onChange={ toggleTheme }
+          checked={ title === 'lightTheme' }
+          checkedIcon={ false }
+          uncheckedIcon={ false }
           height={ 24 }
           width={ 60 }
           offColor={ colors.background }

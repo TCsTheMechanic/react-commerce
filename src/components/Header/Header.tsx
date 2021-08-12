@@ -1,20 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Switch from 'react-switch';
+import { ThemeContext } from 'styled-components';
 
-import { Container } from './headerStyles';
+import { FiSun, FiMoon } from 'react-icons/fi'
+import { TiShoppingCart } from 'react-icons/ti'
+
+import { HeaderContent, RightMenu } from './headerStyles';
 
 const Header: React.FC = () => {
+  const { colors } = useContext(ThemeContext)
+
   return (
-    <Container>
-      <div className="title">
+    <HeaderContent>
+      <div>
         Store Title
       </div>
-      <div className="mainMenu">
+
+      <div>
         About Us
       </div>
-      <div className="cart">
-        Cart Icon
-      </div>
-    </Container>
+
+      <RightMenu>
+        <Switch
+          onChange={ () => {} }
+          checked={ true }
+          checkedIcon={ <FiSun/> }
+          uncheckedIcon={ <FiMoon/> }
+          height={ 24 }
+          width={ 60 }
+          offColor={ colors.background }
+          onColor={ colors.secondary }
+        />
+        <TiShoppingCart/>
+      </RightMenu>
+    </HeaderContent>
   )
 }
 

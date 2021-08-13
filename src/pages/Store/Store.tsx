@@ -4,14 +4,10 @@ import Header from "../../components/Header/Header";
 
 import { StorePage } from "./storeStyles";
 
-interface Props {
-  toggleTheme(): void
-}
-
-const Store: React.FC<Props> = ({ toggleTheme }) => {
+const Store: React.FC = () => {
   return (
     <StorePage>
-      <Header toggleTheme={ toggleTheme }/>
+      <Header />
       Store Page
     </StorePage>
   )

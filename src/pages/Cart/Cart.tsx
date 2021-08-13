@@ -3,14 +3,10 @@ import Header from '../../components/Header/Header';
 
 import { CartPage } from './cartStyles';
 
-interface Props {
-  toggleTheme(): void
-}
-
-const Cart: React.FC<Props> = ({ toggleTheme }) => {
+const Cart: React.FC = () => {
   return (
     <CartPage>
-      <Header toggleTheme={ toggleTheme }/>
+      <Header />
       Cart Page
     </CartPage>
   )

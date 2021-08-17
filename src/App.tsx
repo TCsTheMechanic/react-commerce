@@ -1,12 +1,11 @@
-import { createContext, useState } from 'react';
+import { useState } from 'react';
 import Routes from './Routes';
 import { ThemeProvider } from "styled-components";
+import { SelectThemeContext } from './contexts/SelectThemeContext';
 
 import lightTheme from "./styles/themes/lightTheme";
 import darkTheme from "./styles/themes/darkTheme";
 import GlobalStyle from './styles/globalStyles';
-
-export const SelectThemeContext = createContext({} as any)
 
 const App = () => {
   const [theme, setTheme] = useState('darkTheme')

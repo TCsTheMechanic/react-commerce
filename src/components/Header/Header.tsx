@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Switch from 'react-switch';
 import { ThemeContext } from 'styled-components';
-import { SelectThemeContext } from '../../App';
+import { SelectThemeContext } from '../../contexts/SelectThemeContext';
 import { useHistory } from 'react-router';
 
 import { TiShoppingCart } from 'react-icons/ti'

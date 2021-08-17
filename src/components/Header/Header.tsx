@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Switch from 'react-switch';
 import { ThemeContext } from 'styled-components';
+import { SelectThemeContext } from '../../App';
 import { useHistory } from 'react-router';
 
 import { TiShoppingCart } from 'react-icons/ti'
@@ -8,12 +9,14 @@ import { FaUserCircle } from 'react-icons/fa'
 
 import { HeaderContent, RightMenu, CartButton } from './headerStyles';
 
-interface Props {
-  toggleTheme(): void
-}
-
-const Header: React.FC<Props> = ({ toggleTheme }) => {
+const Header: React.FC = () => {
   const { colors, title } = useContext(ThemeContext)
+
+  const { theme, setTheme } = useContext(SelectThemeContext)
+
+  const toggleTheme = () => {
+    theme === 'darkTheme' ? setTheme('lightTheme') : setTheme('darkTheme')
+  }
 
   const history = useHistory();
 

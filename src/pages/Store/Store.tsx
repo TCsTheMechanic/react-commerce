@@ -1,14 +1,17 @@
 import React from "react";
 
 import Header from "../../components/Header/Header";
+import Product from "../../components/Product/Product";
 
-import { StorePage } from "./storeStyles";
+import { StorePage, Products } from "./storeStyles";
 
 const Store: React.FC = () => {
   return (
     <StorePage>
       <Header />
-      Store Page
+      <Products>
+        <Product />
+      </Products>
     </StorePage>
   )
 }

@@ -1,27 +1,28 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import Routes from './Routes';
 import { ThemeProvider } from "styled-components";
-import { SelectThemeContext } from './contexts/SelectThemeContext';
+import { SelectThemeContext, SelectThemeContextProvider } from './contexts/SelectThemeContext';
 
-import lightTheme from "./styles/themes/lightTheme";
-import darkTheme from "./styles/themes/darkTheme";
+import lightTheme from './styles/themes/lightTheme';
+import darkTheme from './styles/themes/darkTheme';
+
 import GlobalStyle from './styles/globalStyles';
 
 const App = () => {
-  const [theme, setTheme] = useState('darkTheme')
+  const { theme } = useContext(SelectThemeContext)
 
-  const checkTheme = () => {
-    return theme === 'darkTheme' ? darkTheme : lightTheme
+  function toggleTheme() {
+    return theme === 'lightTheme' ? lightTheme : darkTheme
   }
 
   return (
-    <ThemeProvider theme={checkTheme}>
-      <SelectThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeProvider theme={toggleTheme}>
+      <SelectThemeContextProvider>
         <GlobalStyle />
         <div className="App">
           <Routes />
         </div>
-      </SelectThemeContext.Provider>
+      </SelectThemeContextProvider>
     </ThemeProvider>
   );
 }

@@ -12,11 +12,7 @@ import { HeaderContent, RightMenu, CartButton } from './headerStyles';
 const Header: React.FC = () => {
   const { colors, title } = useContext(ThemeContext)
 
-  const { theme, setTheme } = useContext(SelectThemeContext)
-
-  const toggleTheme = () => {
-    theme === 'darkTheme' ? setTheme('lightTheme') : setTheme('darkTheme')
-  }
+  const { toggleTheme } = useContext(SelectThemeContext)
 
   const history = useHistory();
 

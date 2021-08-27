@@ -7,7 +7,7 @@ export const ProductComponent = styled.div`
   justify-content: center;
   border-radius: 1rem;
   box-shadow: 0 .1rem 1rem -.5rem #000000;
-  margin: 1rem;
+  margin: .5rem;
 `
 
 export const ProductPicture = styled.div`

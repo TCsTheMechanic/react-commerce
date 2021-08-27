@@ -1,11 +1,14 @@
 import React from 'react';
 
-import { CarrouselContent } from './carrouselStyles';
+import { CarrouselContent, CarrouselItem } from './carrouselStyles';
 
 const Carrousel: React.FC = () => {
   return (
     <CarrouselContent>
-
+      <CarrouselItem />
+      <CarrouselItem />
+      <CarrouselItem />
+      <CarrouselItem />
     </CarrouselContent>
   );
 }
